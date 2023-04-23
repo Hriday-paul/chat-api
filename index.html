@@ -47,6 +47,7 @@
     </div>
     
 
+    <script src="secret.js"></script>
     <script>
       document.querySelector("button").addEventListener("click", function(){
         document.querySelector(".ans-txt").innerHTML = 'Please wait . . . .'
@@ -55,7 +56,7 @@
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
-            'Authorization': 'Bearer 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'
+            'Authorization': `Bearer ${hide.key}`
           },
           body: JSON.stringify({
             model: 'gpt-3.5-turbo',
@@ -72,7 +73,7 @@
           document.querySelector("input").value="";
         })
         .catch(error => {
-          console.error(error);
+          console.log(error);
         });
       })
     </script>
