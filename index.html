@@ -47,9 +47,11 @@
     </div>
     
 
+    <script src="config.js"></script>
     <script>
-      require('dotenv').config({ path: '.env' })
-      let key = process.env.api_key;
+      // require('dotenv').config({ path: '.env' })
+      // let key = process.env.api_key;
+      let key = hide.key;
       document.querySelector("button").addEventListener("click", function(){
         document.querySelector(".ans-txt").innerHTML = 'Please wait . . . .'
         let usevalue = document.querySelector("input").value;
