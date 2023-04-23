@@ -47,8 +47,9 @@
     </div>
     
 
-    <script src="secret.js"></script>
     <script>
+      require('dotenv').config({ path: '.env' })
+      let key = process.env.api_key;
       document.querySelector("button").addEventListener("click", function(){
         document.querySelector(".ans-txt").innerHTML = 'Please wait . . . .'
         let usevalue = document.querySelector("input").value;
@@ -56,7 +57,7 @@
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
-            'Authorization': `Bearer ${hide.key}`
+            'Authorization': `Bearer ${key}`
           },
           body: JSON.stringify({
             model: 'gpt-3.5-turbo',
