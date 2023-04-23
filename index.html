@@ -55,7 +55,7 @@
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
-            'Authorization': 'Bearer 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'
+            'Authorization': 'Bearer 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'
           },
           body: JSON.stringify({
             model: 'gpt-3.5-turbo',
@@ -67,6 +67,7 @@
         })
         .then(response => response.json())
         .then(data => {
+          //console.log(data)
           document.querySelector(".ans-txt").innerHTML = data.choices[0].message.content;
           document.querySelector("input").value="";
         })
